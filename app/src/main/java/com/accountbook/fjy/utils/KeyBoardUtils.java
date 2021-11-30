@@ -1,4 +1,4 @@
-package utils;
+package com.accountbook.fjy.utils;
 
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;

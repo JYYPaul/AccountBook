@@ -13,9 +13,9 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import adapter.RecordPagerAdapter;
-import frag_record.IncomeFragment;
-import frag_record.OutcomeFragment;
+import com.accountbook.fjy.adapter.RecordPagerAdapter;
+import com.accountbook.fjy.frag_record.IncomeFragment;
+import com.accountbook.fjy.frag_record.OutcomeFragment;
 
 public class RecordActivity extends AppCompatActivity {
     TabLayout tabLayout;

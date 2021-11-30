@@ -1,21 +1,20 @@
-package frag_record;
+package com.accountbook.fjy.frag_record;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.accountbook.fjy.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link OutcomeFragment#newInstance} factory method to
+ * Use the {@link IncomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class OutcomeFragment extends Fragment {
+public class IncomeFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +25,7 @@ public class OutcomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public OutcomeFragment() {
+    public IncomeFragment() {
         // Required empty public constructor
     }
 
@@ -39,8 +38,8 @@ public class OutcomeFragment extends Fragment {
      * @return A new instance of fragment OutcomeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static OutcomeFragment newInstance(String param1, String param2) {
-        OutcomeFragment fragment = new OutcomeFragment();
+    public static IncomeFragment newInstance(String param1, String param2) {
+        IncomeFragment fragment = new IncomeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
