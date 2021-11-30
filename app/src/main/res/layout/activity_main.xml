@@ -25,6 +25,7 @@
             android:layout_height="match_parent"
             android:src="@mipmap/search"
             android:layout_alignParentRight="true"
+            android:onClick="onClick"
             android:padding="10dp"/>
     </RelativeLayout>
     <ListView
@@ -46,6 +47,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
+        android:onClick="onClick"
         android:background="@drawable/main_morebtn_bg"/>
 
     <Button
@@ -54,6 +56,7 @@
         android:layout_height="50dp"
         android:layout_alignBottom="@id/main_btn_more"
         android:layout_toLeftOf="@id/main_btn_more"
+        android:onClick="onClick"
         android:background="@drawable/main_recordbtn_bg"
         android:gravity="center_vertical"
         android:text="@string/editone"
