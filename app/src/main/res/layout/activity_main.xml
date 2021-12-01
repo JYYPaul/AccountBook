@@ -29,7 +29,7 @@
             android:padding="10dp"/>
     </RelativeLayout>
     <ListView
-        android:id="@+id/main_iv"
+        android:id="@+id/main_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/main_top_layout"
