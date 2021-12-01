@@ -6,8 +6,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TableLayout;
 
+import com.accountbook.fjy.frag_record.OutcomeFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import java.util.List;
 
 import com.accountbook.fjy.adapter.RecordPagerAdapter;
 import com.accountbook.fjy.frag_record.IncomeFragment;
-import com.accountbook.fjy.frag_record.OutcomeFragment;
+import com.accountbook.fjy.frag_record.BaseRecordFragment;
 
 public class RecordActivity extends AppCompatActivity {
     TabLayout tabLayout;
