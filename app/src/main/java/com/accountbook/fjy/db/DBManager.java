@@ -1,8 +1,10 @@
 package com.accountbook.fjy.db;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,5 +40,21 @@ public class DBManager {
             list.add(typeBean);
         }
         return list;
+    }
+
+    //向记账表中插入一条元素
+    public static void insertItemToAccounttb(AccountBean bean){
+        ContentValues values = new ContentValues();
+        values.put("typename",bean.getTypename());
+        values.put("sImageId",bean.getsImageId());
+        values.put("beizhu",bean.getBeizhu());
+        values.put("money",bean.getMoney());
+        values.put("time",bean.getTime());
+        values.put("year",bean.getYear());
+        values.put("month",bean.getMonth());
+        values.put("day",bean.getDay());
+        values.put("kind",bean.getKind());
+        db.insert("accounttb",null,values);
+        Log.i("fjy","insertItemToAccounttb:ok!!!");
     }
 }

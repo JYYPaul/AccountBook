@@ -18,9 +18,10 @@ import androidx.fragment.app.Fragment;
 import com.accountbook.fjy.R;
 
 import com.accountbook.fjy.db.AccountBean;
-import com.accountbook.fjy.db.DBManager;
 import com.accountbook.fjy.db.TypeBean;
 import com.accountbook.fjy.utils.KeyBoardUtils;
+import com.accountbook.fjy.utils.BeiZhuDialog;
+import com.accountbook.fjy.utils.SelectTimeDialog;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ import java.util.List;
 /**
  * 记录页面中的支出模块
  */
-public abstract class BaseRecordFragment extends Fragment {
+public abstract class BaseRecordFragment extends Fragment implements View.OnClickListener {
 
     KeyboardView keyboardView;
     EditText moneyEt;
@@ -114,6 +115,8 @@ public abstract class BaseRecordFragment extends Fragment {
         typeTv = view.findViewById(R.id.frag_record_tv_type);
         beizhuTv = view.findViewById(R.id.frag_record_tv_beizhu);
         timeTv = view.findViewById(R.id.frag_record_tv_time);
+        beizhuTv.setOnClickListener(this);
+        timeTv.setOnClickListener(this);
         //让自定义键盘显示
         KeyBoardUtils boardUtils = new KeyBoardUtils(keyboardView, moneyEt);
         boardUtils.showKeyboard();
@@ -139,4 +142,51 @@ public abstract class BaseRecordFragment extends Fragment {
 
     //让子类一定重写这个方法
     public abstract void saveAccountToDB() ;
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.frag_record_tv_time:
+                showTimeDialog();
+                break;
+            case R.id.frag_record_tv_beizhu:
+                showBZDialog();
+                break;
+        }
+    }
+
+    //弹出显示时间的对话框
+    private void showTimeDialog() {
+        SelectTimeDialog dialog = new SelectTimeDialog(getContext());
+        dialog.show();
+        //设定确定按钮被点击的监听器
+        dialog.setOnEnsureListener(new SelectTimeDialog.OnEnsureListener() {
+            @Override
+            public void onEnsure(String time, int year, int month, int day) {
+                timeTv.setText(time);
+                accountBean.setTime(time);
+                accountBean.setYear(year);
+                accountBean.setMonth(month);
+                accountBean.setDay(day);
+            }
+        });
+    }
+
+    //弹出对话框
+    private void showBZDialog() {
+        BeiZhuDialog dialog = new BeiZhuDialog(getContext());
+        dialog.show();
+        dialog.setDialogSize();
+        dialog.setOnEnsureListener(new BeiZhuDialog.OnEnsureListener() {
+            @Override
+            public void onEnsure() {
+                String msg = dialog.getEditText();
+                if (!TextUtils.isEmpty(msg)) {
+                    beizhuTv.setText(msg);
+                    accountBean.setBeizhu(msg);
+                }
+                dialog.cancel();
+            }
+        });
+    }
 }
