@@ -64,17 +64,6 @@
             android:layout_alignBottom="@id/item_mainlv_top_tv2"
             android:layout_toLeftOf="@id/item_mainlv_top_tv_out"
             android:text="@string/month_out" />
-        <TextView
-            android:id="@+id/item_mainlv_top_tv4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@mipmap/ih_biaoge"
-            android:layout_below="@id/item_mainlv_top_tv2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="@string/see_chart"
-            android:textColor="@color/black"
-            android:drawablePadding="10dp"/>
     </RelativeLayout>
     <TextView
         android:id="@+id/item_mainlv_top_tv_day"

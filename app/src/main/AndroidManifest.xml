@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AccountBook">
         <activity
+            android:name=".HistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+        <activity
             android:name=".RecordActivity"
             android:exported="false" />
         <activity
